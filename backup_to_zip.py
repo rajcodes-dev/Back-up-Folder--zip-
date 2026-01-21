@@ -1,0 +1,14 @@
+"""
+This program copies the entire folder and file into a zip
+file whose filenames increment.
+"""
+
+import zipfile,os
+from pathlib import Path
+
+def backup_to_zip(folder):
+    # back up entire content into a zip.
+    folder = Path(folder) # Make sure folder is Path, not a string.
+    
+
+backup_to_zip(Path("D:\PROGRAMMES\Code Arena\Back-up-Folder--zip-") / 'spam')
