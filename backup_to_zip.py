@@ -19,19 +19,19 @@ def backup_to_zip(folder):
             break
         number += 1
 
-        print(f"Creating {zip_filename}...")
-        backup_zip = zipfile.ZipFile("zip_filename", "w")
+    print(f"Creating {zip_filename}...")
+    backup_zip = zipfile.ZipFile("zip_filename", "w")
 
         # Walking through every single folders, subfolders and files.
-        for folder_name, subfolders, filenames in os.walk(folder):
-            folder_name = Path(folder_name)
-            print(f"Adding files in folder {folder_name}...")
+    for folder_name, subfolders, filenames in os.walk(folder):
+        folder_name = Path(folder_name)
+        print(f"Adding files in folder {folder_name}...")
 
-            # Compressing all the folder and files into a zip.
-            for filename in filenames:
-                print(f"Adding files {filename}...")
-                backup_zip.write(folder_name / filename)
-        backup_zip.close()
-        print("Done.")
+        # Compressing all the folder and files into a zip.
+        for filename in filenames:
+            print(f"Adding files {filename}...")
+            backup_zip.write(folder_name / filename)
+    backup_zip.close()
+    print("Done.")
 
 backup_to_zip(Path("d:/PROGRAMMES/Code Arena/Back-up-Folder--zip-") / "spam")
