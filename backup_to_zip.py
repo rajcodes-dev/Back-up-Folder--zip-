@@ -9,18 +9,16 @@ from pathlib import Path
 def backup_to_zip(folder):
     # back up entire content into a zip.
     folder = Path(folder) # Make sure folder is Path, not a string.
-    print(folder)
 
     number = 1
     while True:
         zip_filename = Path(folder.parts[-1] + "_" + str(number) + ".zip")
         if not zip_filename.exists():
-            print("yes")
             break
         number += 1
 
     print(f"Creating {zip_filename}...")
-    backup_zip = zipfile.ZipFile("zip_filename", "w")
+    backup_zip = zipfile.ZipFile(zip_filename, "w")
 
         # Walking through every single folders, subfolders and files.
     for folder_name, subfolders, filenames in os.walk(folder):
