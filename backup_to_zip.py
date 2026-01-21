@@ -16,6 +16,9 @@ def backup_to_zip(folder):
         if not zip_filename.exists():
             break
         number += 1
+
+        print(f"Creating {zip_filename}...")
+        backup_zip = zipfile.ZipFile("zip_filename", "w")
     print("Done.")
 
 backup_to_zip(Path("D:\PROGRAMMES\Code Arena\Back-up-Folder--zip-") / 'spam')
